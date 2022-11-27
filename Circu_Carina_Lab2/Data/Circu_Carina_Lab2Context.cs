@@ -15,5 +15,7 @@ namespace Circu_Carina_Lab2.Data
         }
 
         public DbSet<Circu_Carina_Lab2.Models.Book> Book { get; set; } = default!;
+
+        public DbSet<Circu_Carina_Lab2.Models.Publisher> Publisher { get; set; }
     }
 }

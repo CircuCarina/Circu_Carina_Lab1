@@ -14,6 +14,8 @@
     <thead>
         <tr>
             <th>
+                <a href="c:\users\lenovo\desktop\circu_carina_lab1\circu_carina_lab2\pages\books\index.cshtml.cs">c:\users\lenovo\desktop\circu_carina_lab1\circu_carina_lab2\pages\books\index.cshtml.cs</a>
+                <a href="c:\users\lenovo\desktop\circu_carina_lab1\circu_carina_lab2\pages\books\index.cshtml">c:\users\lenovo\desktop\circu_carina_lab1\circu_carina_lab2\pages\books\index.cshtml</a>
                 @Html.DisplayNameFor(model => model.Book[0].Title)
             </th>
             <th>
@@ -23,8 +25,9 @@
                 @Html.DisplayNameFor(model => model.Book[0].Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Book[0].PublishingDate)
+                @Html.DisplayNameFor(model => model.Book[0].Publisher.PublisherName)
             </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -40,7 +43,12 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PublishingDate)
+                @Html.DisplayFor(modelItem => item.Publisher.PublisherName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }

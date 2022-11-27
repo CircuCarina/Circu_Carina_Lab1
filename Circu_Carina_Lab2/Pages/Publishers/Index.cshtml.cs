@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Circu_Carina_Lab2.Data;
 using Circu_Carina_Lab2.Models;
 
-namespace Circu_Carina_Lab2.Pages.Books
+namespace Circu_Carina_Lab2.Pages.Publishers
 {
     public class IndexModel : PageModel
     {
@@ -19,13 +19,14 @@ namespace Circu_Carina_Lab2.Pages.Books
             _context = context;
         }
 
-        public IList<Book> Book { get;set; } = default!;
+        public IList<Publisher> Publisher { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Book = await_context.Book
-                .Include(b=>b.Publisher)
-                .ToListAsync();
+            if (_context.Publisher != null)
+            {
+                Publisher = await _context.Publisher.ToListAsync();
+            }
         }
     }
 }
