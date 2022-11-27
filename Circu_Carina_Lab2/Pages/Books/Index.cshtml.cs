@@ -23,7 +23,7 @@ namespace Circu_Carina_Lab2.Pages.Books
 
         public async Task OnGetAsync()
         {
-            Book = await_context.Book
+            Book = await_context.Book 
                 .Include(b=>b.Publisher)
                 .ToListAsync();
         }
